@@ -1,0 +1,8 @@
+{
+  "RAW_DATA_DIR": "./",
+  "TRAIN_DATA_CLEAN_PATH": "./server/models/gemma-3n-E4B-it/",
+  "TEST_DATA_CLEAN_PATH": "./",
+  "MODEL_CHECKPOINT_DIR": "./server/models/",
+  "LOGS_DIR": "./server/analysis_output/",
+  "SUBMISSION_DIR": "./server/analysis_output/"
+}

@@ -1,0 +1,163 @@
+# OASK (Offline AI Survival Kit) - Complete Requirements
+# Generated for Gemma 3n challenge submission with exact package versions
+# Install with: pip install -r requirements.txt
+
+# =============================================================================
+# CORE AI AND MACHINE LEARNING PACKAGES
+# =============================================================================
+torch==2.7.1
+transformers==4.53.0
+accelerate==1.8.1
+tokenizers==0.21.2
+safetensors==0.5.3
+
+# =============================================================================
+# WEB FRAMEWORK AND SERVER
+# =============================================================================
+fastapi==0.115.14
+uvicorn==0.35.0
+starlette==0.46.2
+python-multipart==0.0.20
+
+# =============================================================================
+# IMAGE AND FILE PROCESSING
+# =============================================================================
+pillow==11.2.1
+PyPDF2==3.0.1
+python-docx==1.2.0
+
+# =============================================================================
+# SYSTEM MONITORING AND OPTIMIZATION  
+# =============================================================================
+psutil==7.0.0
+py-cpuinfo==9.0.0
+
+# =============================================================================
+# AUDIO PROCESSING (OPTIONAL)
+# =============================================================================
+SpeechRecognition==3.14.3
+pydub==0.25.1
+soundfile==0.13.1
+
+# =============================================================================
+# CORE DEPENDENCIES
+# =============================================================================
+# HTTP and networking
+requests==2.32.3
+urllib3==2.4.0
+certifi==2025.4.26
+idna==3.10
+charset-normalizer==3.4.2
+
+# Data handling and validation
+pydantic==2.11.7
+pydantic-core==2.33.2
+annotated-types==0.7.0
+
+# Scientific computing
+numpy==2.2.6
+scipy==1.16.0
+
+# Async support
+anyio==4.9.0
+sniffio==1.3.1
+
+# File and data processing
+filelock==3.18.0
+fsspec==2025.5.1
+huggingface-hub==0.33.2
+tqdm==4.67.1
+packaging==25.0
+platformdirs==4.3.8
+
+# Template and markup
+Jinja2==3.1.6
+MarkupSafe==3.0.2
+
+# Configuration and utilities
+PyYAML==6.0.2
+click==8.2.1
+colorama==0.4.6
+regex==2024.11.6
+
+# =============================================================================
+# DEVELOPMENT AND TESTING
+# =============================================================================
+pytest==8.4.1
+pluggy==1.6.0
+iniconfig==2.1.0
+
+# =============================================================================
+# TYPING AND INSPECTION
+# =============================================================================
+typing-extensions==4.14.0
+typing-inspection==0.4.1
+
+# =============================================================================
+# SECURITY
+# =============================================================================
+cryptography==45.0.5
+cffi==1.17.1
+pycparser==2.22
+
+# =============================================================================
+# OPTIONAL ENHANCEMENTS (GRACEFUL DEGRADATION IF MISSING)
+# =============================================================================
+# Advanced PDF processing
+pdfplumber==0.11.7
+pdfminer.six==20250506
+pypdfium2==4.30.1
+PyMuPDF==1.26.3
+
+# Audio processing enhancement
+librosa==0.11.0
+audioread==3.0.1
+joblib==1.5.1
+lazy-loader==0.4
+pooch==1.8.2
+decorator==5.2.1
+numba==0.61.2
+llvmlite==0.44.0
+soxr==0.5.0.post1
+
+# Computer vision (for enhanced image processing)
+opencv-python==4.12.0.88
+
+# Machine learning utilities
+scikit-learn==1.7.0
+threadpoolctl==3.6.0
+
+# Mathematical computation
+sympy==1.14.0
+mpmath==1.3.0
+
+# Network and messaging
+networkx==3.5
+msgpack==1.1.1
+
+# =============================================================================
+# SYSTEM COMPATIBILITY
+# =============================================================================
+# Audio codec support
+audioop-lts==0.2.1
+standard-aifc==3.13.0
+standard-chunk==3.13.0
+standard-sunau==3.13.0
+
+# Build tools
+setuptools==80.9.0
+
+# =============================================================================
+# FRONTEND DEPENDENCIES (Node.js/npm)
+# =============================================================================
+# Note: The following are installed via npm in the client/ directory:
+# react@^19.1.0
+# react-dom@^19.1.0
+# vite@^7.0.0
+# @vitejs/plugin-react@^4.6.0
+# tailwindcss@^4.1.11
+# autoprefixer@^10.4.21
+# postcss@^8.5.6
+#
+# Install frontend dependencies with:
+# cd client && npm install
