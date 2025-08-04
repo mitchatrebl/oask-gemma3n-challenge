@@ -6,8 +6,13 @@ A simple guide to get OASK running on your Windows computer.
 - Windows 10 or 11
 - Python 3.8 or newer
 - Node.js (any recent version)
-- 17 GB free space
-- 16 GB RAM
+- **17 GB free space** (for the AI model)
+- **16 GB RAM** (for running the AI)
+- **Internet connection** (for initial setup only)
+
+## ⚠️ IMPORTANT: You Must Download the AI Model First!
+
+**The AI model is NOT included** - it's too big for download packages. You must download it separately.
 
 ## Step 1: Extract the Files
 1. Right-click the OASK archive file
@@ -26,7 +31,19 @@ A simple guide to get OASK running on your Windows computer.
    ```
    Wait for it to finish (takes 5-10 minutes).
 
-## Step 3: Install Frontend Dependencies
+## Step 3: Download the AI Model (REQUIRED!)
+**This is the most important step!**
+
+1. In the same PowerShell window, run:
+   ```powershell
+   python download_model.py
+   ```
+2. **This downloads 16 GB of AI model files** - it takes 10-30 minutes
+3. You'll see messages like "Downloading Gemma 3n-E4B-it model..."
+4. Wait until you see "✅ Model download completed!"
+5. **This only needs to be done once**
+
+## Step 4: Install Frontend Dependencies
 1. Go to the client folder:
    ```powershell
    cd client
@@ -37,7 +54,7 @@ A simple guide to get OASK running on your Windows computer.
    ```
    Wait for it to finish (takes 2-3 minutes).
 
-## Step 4: Start the AI Server
+## Step 5: Start the AI Server
 1. Go back to the main folder:
    ```powershell
    cd ..
@@ -52,7 +69,7 @@ A simple guide to get OASK running on your Windows computer.
    ```
    Leave this window open. You'll see "Uvicorn running on http://0.0.0.0:8001" when ready.
 
-## Step 5: Start the Web Interface
+## Step 6: Start the Web Interface
 1. Open a NEW PowerShell window
 2. Navigate to your OASK folder:
    ```powershell
@@ -68,10 +85,29 @@ A simple guide to get OASK running on your Windows computer.
    ```
    You'll see "Local: http://localhost:5173"
 
-## Step 6: Open OASK in Your Browser
+## Step 7: Open OASK in Your Browser
 1. Open any web browser
 2. Go to: `http://localhost:5173`
 3. OASK will load and be ready to use
+
+## If Something Goes Wrong
+
+### "Model not found" error
+- **You forgot Step 3!** Run `python download_model.py`
+- Make sure it completed successfully
+
+### Download is very slow
+- This is normal - the AI model is huge (16 GB)
+- Use a stable internet connection
+- Don't interrupt the download
+
+### Python errors during model download
+- You may need to accept the Gemma license at: https://huggingface.co/google/gemma-3n-e4b-it
+- Make sure you have a Hugging Face account
+
+## After Setup: OASK Runs Completely Offline!
+
+Once the model is downloaded, OASK needs **no internet connection** to work.
 
 ## Using OASK
 

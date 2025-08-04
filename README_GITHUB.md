@@ -46,11 +46,11 @@ This repository contains the complete implementation of Gemma 3n-E4B-it (9B para
    cd ..
    ```
 
-4. **Download Gemma 3n model** (First run only)
+4. **Download Gemma 3n model** ⚠️ **REQUIRED STEP**
    ```bash
-   python server/server.py
+   python download_model.py
    ```
-   The model will be automatically downloaded to `server/models/gemma-3n-E4B-it/`
+   This downloads ~16GB of model files. **Must be run before first use!**
 
 5. **Start the application**
    ```bash
@@ -65,6 +65,21 @@ This repository contains the complete implementation of Gemma 3n-E4B-it (9B para
 6. **Access the application**
    - Frontend: http://localhost:5173
    - API Documentation: http://localhost:8001/docs
+
+## ⚠️ Important Setup Notes
+
+### Model Download is Required
+- **The model is NOT downloaded automatically** when running the server
+- **You MUST run `python download_model.py` first** 
+- This is a one-time setup that downloads ~16GB of model files
+- Internet connection required only for this initial download
+- After download, the app runs completely offline
+
+### Why Separate Download?
+- Model files are too large for GitHub (16GB vs 100MB limit)
+- Ensures you have the latest model from Hugging Face
+- Allows validation of Gemma license acceptance
+- Separates setup from runtime for cleaner architecture
 
 ## 🔧 Gemma 3n Implementation Details
 

@@ -46,11 +46,11 @@ This repository contains the complete implementation of Gemma 3n-E4B-it (9B para
    cd ..
    ```
 
-4. **Download Gemma 3n model** (First run only)
+4. **Download Gemma 3n model** ⚠️ **REQUIRED FIRST STEP**
    ```bash
-   python server/server.py
+   python download_model.py
    ```
-   The model will be automatically downloaded to `server/models/gemma-3n-E4B-it/`
+   **Important**: This downloads ~16GB of model files and must be run before starting the server!
 
 5. **Start the application**
    ```bash
@@ -66,6 +66,20 @@ This repository contains the complete implementation of Gemma 3n-E4B-it (9B para
    - Frontend: http://localhost:5173
    - API Documentation: http://localhost:8001/docs
 
+## ⚠️ Critical Setup Information
+
+### Model Download Process
+- **The model is NOT included in this repository** (too large for GitHub)
+- **You MUST run `python download_model.py` before first use**
+- This downloads the Gemma 3n-E4B-it model (~16GB) from Hugging Face
+- Internet connection required only for this one-time setup
+- After download, the application runs completely offline
+
+### What Happens During Setup
+1. `pip install -r requirements.txt` - Installs Python packages
+2. `python download_model.py` - Downloads model to `server/models/gemma-3n-E4B-it/`
+3. `python server/server.py` - Loads model from local files (offline)
+
 ## 🔧 Gemma 3n Implementation Details
 
 ### Model Architecture
@@ -73,11 +87,13 @@ This repository contains the complete implementation of Gemma 3n-E4B-it (9B para
 - **Type**: Multimodal (text, image, audio, video inputs)
 - **Context**: 32K tokens total, 128K text-only
 - **Framework**: Hugging Face Transformers 4.53.0+
+- **Local Files Only**: Uses `local_files_only=True` for complete offline operation
 
 ### Key Implementation Files
 - **`server/unified_model_runner.py`**: Core Gemma 3n model integration
 - **`server/server.py`**: FastAPI backend with model endpoints
 - **`client/src/App.jsx`**: React frontend with chat interface
+- **`download_model.py`**: One-time model download script
 
 ### Model Loading and Inference
 ```python
